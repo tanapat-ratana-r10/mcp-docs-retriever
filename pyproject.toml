@@ -1,0 +1,15 @@
+[project]
+name = "mcp-docs-retriever"
+version = "0.1.0"
+description = "MCP server for adding and retrieving documentation with semantic search using ChromaDB."
+requires-python = ">=3.10"
+dependencies = [
+  "chromadb",
+  "mcp[cli]",
+  "httpx",
+  "requests",
+  "beautifulsoup4"
+]
+
+[tool.uv]
+virtualenvs.in-project = true
