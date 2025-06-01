@@ -1,0 +1,33 @@
+[project]
+name = "mcp-docs-retriever"
+version = "0.1.0"
+description = "MCP server for documentation retrieval and search"
+requires-python = ">=3.9"
+dependencies = [
+    "mcp[cli]>=1.2.0",
+    "chromadb>=0.4.22",
+    "fastapi>=0.109.0",
+    "uvicorn>=0.27.0",
+    "pydantic>=2.6.0",
+    "python-dotenv>=1.0.0",
+    "sentence-transformers>=2.5.1",
+    "beautifulsoup4>=4.12.0",
+    "requests>=2.31.0",
+    "urllib3>=2.0.0",
+    "aiohttp>=3.9.0",
+    "tqdm>=4.66.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"] 
