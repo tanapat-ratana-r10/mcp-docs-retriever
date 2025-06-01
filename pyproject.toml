@@ -1,0 +1,44 @@
+# pyproject.toml – uv‑native layout for the MCP Docs Server
+# ==========================================================
+# This file lets **uv** manage your dependencies exactly like Poetry or Hatch
+# but with uv’s ultra‑fast resolver + installer.  It follows PEP‑621 so other
+# tools still understand the metadata.
+
+[project]
+name            = "mcp-docs-server"
+version         = "0.1.0"
+description     = "MCP server for semantic documentation storage and crawl‑ing"
+authors         = [{ name = "Your Name", email = "you@example.com" }]
+readme          = "README.md"
+license         = { text = "MIT" }
+requires-python = ">=3.10"
+
+# ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Runtime dependencies – uv will lock/resolve them under .venv
+# ---------------------------------------------------------------------------
+
+dependencies = [
+    "fastmcp",
+    "qdrant-client",
+    "sentence-transformers",
+    "requests",
+    "beautifulsoup4",
+    "html2text",
+    "lxml",
+]
+
+# Optional extras (PEP 621 compliant)
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+    "pytest",
+]
+
+# ---------------------------------------------------------------------------
+# Build‑system stanza so uv can act as the backend (PEP‑517)
+# ---------------------------------------------------------------------------
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
