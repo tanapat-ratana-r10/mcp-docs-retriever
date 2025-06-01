@@ -1,0 +1,24 @@
+[project]
+name = "mcp-docs-retriever"
+version = "0.1.0"
+description = "MCP server for documentation retrieval"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+    "chromadb>=0.5.0",
+    "pydantic>=2.0.0",
+    "beautifulsoup4>=4.12.0",
+    "httpx>=0.27.0",
+    "lxml>=5.0.0",
+    "markdownify>=0.13.0",
+    "sentence-transformers>=3.0.0",
+    "torch>=2.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+mcp-docs-retriever = "mcp_docs_retriever.server:main"
